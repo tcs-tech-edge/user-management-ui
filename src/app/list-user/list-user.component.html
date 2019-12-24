@@ -1,0 +1,33 @@
+<h2 style="text-align: center;">LIST OF USERS</h2>
+<br/>
+<div class="container" *ngFor="let item of getUserList();">
+  <div class="row">
+    <div class="col-lg-4">&nbsp;</div>
+    <div class="col-lg-2" style="text-align: left;font-weight: bolder; font-size: larger;">{{item.id}}.</div>
+    <div class="col-lg-2">&nbsp;</div>
+    <div class="col-lg-4">&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">&nbsp;</div>
+    <div style="font-weight: bold;text-align: right;" class="col-lg-2"><span>First Name</span></div>
+    <div class="col-lg-2">{{item.firstName}}</div>
+    <div class="col-lg-4">&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">&nbsp;</div>
+    <div style="font-weight: bold;text-align: right;" class="col-lg-2"><span>Last Name</span></div>
+    <div class="col-lg-2">{{item.lastName}}</div>
+    <div class="col-lg-4">&nbsp;</div>
+  </div>
+  <hr/>
+</div>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">&nbsp;</div>
+    <div class="col-lg-2"><button class="btn btn-primary" type="button" (click)="goToAddUser()">Add User</button></div>
+    <div class="col-lg-5">&nbsp;</div>
+  </div>
+</div>
+
+

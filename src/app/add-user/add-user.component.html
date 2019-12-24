@@ -1,0 +1,63 @@
+<br/>
+<h2 style="text-align: center;">ADD USER</h2>
+<br/>
+<form novalidate #addUserForm="ngForm" (submit)="addUser(addUser)">
+  <div class="container">
+
+    <div class="row" style="text-align: center;">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-2">
+        <div class="bg-danger text-white p-2 mb-2" *ngIf="responseReceived">
+          {{addUserResponse}}
+        </div>
+      </div>
+      <div class="col-lg-5"></div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-lg-4">&nbsp;</div>
+      <div class="col-lg-2">First Name</div>
+      <div class="col-lg-2">
+        <input type="text" name="fname" #fname="ngModel" [(ngModel)]="user.firstName" required pattern="^[A-Za-z ]+$">
+
+        <ul class="text-danger list-unstyled"
+          *ngIf="(formSubmitted || fname.dirty) && (formSubmitted && fname.invalid)">
+          <li *ngFor="let error of getValidationMessages(fname)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">&nbsp;</div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-lg-4">&nbsp;</div>
+      <div class="col-lg-2">Last Name</div>
+      <div class="col-lg-2">
+        <input type="text" name="lname" #lname="ngModel" [(ngModel)]="user.lastName" required pattern="^[A-Za-z ]+$">
+
+        <ul class="text-danger list-unstyled"
+          *ngIf="(formSubmitted || lname.dirty) && (formSubmitted && lname.invalid)">
+          <li *ngFor="let error of getValidationMessages(lname)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">&nbsp;</div>
+    </div>
+
+    <hr />
+    <br />
+    
+    <div class="row">
+      <div class="col-lg-5">&nbsp;</div>
+      <div class="col-lg-2"><button type="button" class="btn btn-primary" (click)="addUser(addUserForm)">Add
+          User</button></div>
+      <div class="col-lg-5">&nbsp;</div>
+    </div>
+  </div>
+</form>
