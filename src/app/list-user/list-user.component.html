@@ -1,9 +1,9 @@
 <h2 style="text-align: center;">LIST OF USERS</h2>
 <br/>
-<div class="container" *ngFor="let item of getUserList();">
+<div class="container" *ngFor="let item of getUserList(); let i = index">
   <div class="row">
     <div class="col-lg-4">&nbsp;</div>
-    <div class="col-lg-2" style="text-align: left;font-weight: bolder; font-size: larger;">{{item.id}}.</div>
+    <div class="col-lg-2" style="text-align: left;font-weight: bolder; font-size: larger;">{{i + 1}}.</div>
     <div class="col-lg-2">&nbsp;</div>
     <div class="col-lg-4">&nbsp;</div>
   </div>

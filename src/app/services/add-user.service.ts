@@ -12,15 +12,20 @@ export class AddUserService {
   constructor(private _http:HttpClient) { }
 
   getUsers():Observable<User[]>{
-    return this._http.get<User[]>("http://mybackend.com/api/users");
+    //return this._http.get<User[]>("http://mybackend.com/api/users");
+
+    const headers = new HttpHeaders({"Authorization":"Basic " + btoa("user1:secret1")});
+    return this._http.get<User[]>("http://localhost:8080/user/list", {headers});
   }
 
   addUser(u:User):Observable<number>{
     let hh = new HttpHeaders({
-      "content-type":"application/json"
+      "content-type":"application/json",
+      "Authorization":"Basic " + btoa("user1:secret1")
     });
 
-    return this._http.post("http://mybackend.com/api/users", u, {
+    //return this._http.post("http://mybackend.com/api/users", u, {
+    return this._http.post("http://localhost:8080/user/add", u, {
       headers:hh,
       observe:"response"
     }).pipe(
