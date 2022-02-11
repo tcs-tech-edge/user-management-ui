@@ -9,7 +9,7 @@ export class NavbarService {
   private links = new Array<{ text: string, path: string }>();
   private isLoggedIn = new Subject<boolean>();
   
-  constructor() { 
+  constructor() {
     this.addItem({text:'Login', path: 'login'})
   }
 

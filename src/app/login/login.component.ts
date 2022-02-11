@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router:Router,
     private _lgService: LoginService,
-    private navbarService: NavbarService) { 
+    private navbarService: NavbarService) {
       this.navbarService.getLoginStatus().subscribe(status => this.isLoggedIn = status);
   }
 
