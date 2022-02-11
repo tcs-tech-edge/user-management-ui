@@ -38,8 +38,8 @@ export class AddUserComponent implements OnInit {
 
       let newUser = new User();
       newUser.id = uArray.length + 1;
-      newUser.firstName = userForm.controls['fname'].value; 
-      newUser.lastName = userForm.controls['lname'].value; 
+      newUser.firstName = userForm.controls['fname'].value;
+      newUser.lastName = userForm.controls['lname'].value;
 
       this._userSvc.addUser(newUser).subscribe(statusCode => {
         console.log("The response is: "+statusCode);
